@@ -3,3 +3,10 @@ $color_h1: red;
 h1 {
   color: $color_h1;
 }
+
+.icon-smile {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: url('./smile.png');
+}
