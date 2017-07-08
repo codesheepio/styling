@@ -38,7 +38,7 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true, modules: true }
           }
         ]
       },
@@ -48,7 +48,7 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true }
+            options: { sourceMap: true, modules: true, importLoaders: 1 }
           },
           {
             loader: 'sass-loader',
