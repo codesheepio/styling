@@ -38,12 +38,26 @@ module.exports = {
           'style-loader',
           {
             loader: 'css-loader',
-            options: { sourceMap: true, modules: true }
+            options: { sourceMap: true }
           }
         ]
       },
       {
-        test: /\.scss$/,
+        test: /^(?:(?!\.local\.scss$).)*\.scss$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          },
+          {
+            loader: 'sass-loader',
+            options: { sourceMap: true }
+          }
+        ]
+      },
+      {
+        test: /\.local\.scss$/,
         use: [
           'style-loader',
           {
@@ -66,7 +80,14 @@ module.exports = {
             }
           }
         ]
-      }
+      },
+      {
+        test: /\.(svg|ttf|eot|woff|woff2)$/,
+        loader: 'file-loader',
+        options: {
+          name: 'fonts/[name].[ext]',
+        },
+      },
     ]
   },
   plugins: [
